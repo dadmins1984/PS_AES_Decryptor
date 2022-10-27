@@ -1,12 +1,12 @@
+$UserPath = "$($env:USERPROFILE)\Desktop"
 $AES = [System.Security.Cryptography.AES]::Create()
 $AES.Padding = [System.Security.Cryptography.PaddingMode]::PKCS7
 $AES.Mode = [System.Security.Cryptography.CipherMode]::CBC
 $AES.BlockSize = 128
 $AES.KeySize = 256
-$UserPath = "$($env:USERPROFILE)\Desktop"
 $AES.Key = Get-Content $UserPath\key.s
 $AES.IV = Get-Content $UserPath\IV.s
-$Decryptor = $AES.CreateDecryptor()
+$Decryptor = $AES.CreateDecryptor($AES.Key,$AES.IV)
 
 
 $locations = $UserPath #'C:\Users\','C:\Program Files\','C:\Program Files (x86)'
