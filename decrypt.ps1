@@ -9,7 +9,7 @@ $AES.IV = Get-Content $UserPath\IV.s
 $Decryptor = $AES.CreateDecryptor()
 
 
-$locations = 'C:\Users\','C:\Program Files\','C:\Program Files (x86)'
+$locations = $UserPath #'C:\Users\','C:\Program Files\','C:\Program Files (x86)'
 
 foreach ($location in $locations)
 {
