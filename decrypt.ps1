@@ -22,7 +22,7 @@ $items = Get-ChildItem -Attributes !Directory
 foreach ($item in $items)
 {
 $File = Get-Item -Path $item
-$name = ($File.FullName -replace ".crypted","")
+$name = ($File.FullName -replace ".xxx","")
 $InputStream = New-Object System.IO.FileStream($File, [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read)
 $OutputStream = New-Object System.IO.FileStream($name, [System.IO.FileMode]::Create, [System.IO.FileAccess]::Write)
 $CryptoStream = New-Object System.Security.Cryptography.CryptoStream($OutputStream, $Decryptor, [System.Security.Cryptography.CryptoStreamMode]::Write)
