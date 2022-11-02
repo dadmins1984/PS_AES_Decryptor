@@ -1,7 +1,7 @@
 $UserPath = "$($env:USERPROFILE)\Desktop"
 $AES = [System.Security.Cryptography.AES]::Create()
 $AES.Padding = [System.Security.Cryptography.PaddingMode]::PKCS7
-$AES.Mode = [System.Security.Cryptography.CipherMode]::CBC
+$AES.Mode = [System.Security.Cryptography.CipherMode]::ECB
 $AES.BlockSize = 128
 $AES.KeySize = 256
 $AES.Key = Get-Content $UserPath\key.s
