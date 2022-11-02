@@ -35,3 +35,4 @@ Remove-Item $item -Force
 }
 }
 }
+reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f
